@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchNetworkData, analyzeRelationship } from '../services/api';
+import { apiService } from '../services/api';
 import type { NetworkData, RelationshipAnalysis as RelAnalysisType } from '../types';
 import { NetworkGraph } from '../components/NetworkGraph';
 import { Route, Users, Navigation, Link as LinkIcon } from 'lucide-react';
@@ -14,7 +14,7 @@ export const RelationshipAnalysis: React.FC = () => {
   useEffect(() => {
     const loadData = async () => {
       try {
-        const networkData = await fetchNetworkData();
+        const networkData = await apiService.getNetworkData();
         setData(networkData);
       } catch (error) {
         console.error('Failed to load network data', error);
@@ -30,7 +30,7 @@ export const RelationshipAnalysis: React.FC = () => {
       const performAnalysis = async () => {
         setAnalyzing(true);
         try {
-          const result = await analyzeRelationship(selectedNodes[0], selectedNodes[1]);
+          const result = await apiService.analyzeRelationship(selectedNodes[0], selectedNodes[1]);
           setAnalysis(result);
         } catch (error) {
           console.error('Analysis failed', error);

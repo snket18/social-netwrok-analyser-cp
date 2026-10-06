@@ -48,6 +48,13 @@ body {
   border: 1px solid var(--border);
 }
 
+/* Research-figure style dot grid for graph canvases */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }

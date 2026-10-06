@@ -52,3 +52,20 @@ export interface RelationshipAnalysis {
 export interface TemporalEdge extends EdgeData {
   timestamp: number;
 }
+
+export interface TemporalEvent {
+  source: string;
+  target: string;
+  timestamp: number;
+}
+
+export interface TemporalPathAnalysis {
+  source: string;
+  target: string;
+  events: TemporalEvent[];
+  staticPath: string[];
+  staticPathLength: number;
+  timeRespectingPath: string[];
+  timeRespectingPathLength: number;
+  isTimeRespecting: boolean;
+}

@@ -16,7 +16,7 @@ export interface NetworkGraphRef {
 }
 
 // Community colors (color-blind friendly)
-const COMMUNITY_COLORS = [
+export const COMMUNITY_COLORS = [
   '#3b82f6', // Blue
   '#ef4444', // Red
   '#10b981', // Green

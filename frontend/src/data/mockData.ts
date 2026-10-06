@@ -1,7 +1,7 @@
 import type { NetworkData } from '../types';
 
 // Generate 32 nodes split into 4 communities (0, 1, 2, 3)
-const generateSyntheticNetwork = (): NetworkData => {
+export const generateSyntheticNetwork = (): NetworkData => {
   const nodes = [];
   const edges = [];
   
